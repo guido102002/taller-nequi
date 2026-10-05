@@ -1,0 +1,34 @@
+
+const movimientos = [
+  { tipo: 'recarga',       valor: 100000 },
+  { tipo: 'vacio',         valor: 0 },
+  { tipo: 'retiro',        valor: -20000 },
+  { tipo: 'vacio',         valor: 0 },
+  { tipo: 'pago_comercio', valor: -35000 },
+  { tipo: 'pago_comercio', valor: -12000 }
+];
+
+let posicionEncontrada = -1;
+
+for (let i = 0; i < movimientos.length; i++) {
+
+  if (movimientos[i].valor === 0) {
+    console.log('Posición ' + i + ': movimiento vacío, se ignora.');
+    continue; 
+  }
+
+  console.log('Posición ' + i + ': revisando ' + movimientos[i].tipo);
+
+  if (movimientos[i].tipo === 'pago_comercio') {
+    posicionEncontrada = i;
+    console.log('¡Primer pago a comercio encontrado en la posición ' + i + '!');
+    break; 
+  }
+}
+
+
+if (posicionEncontrada === -1) {
+  console.log('No hay pagos a comercio en la lista.');
+} else {
+  console.log('Resultado final: el primer pago a comercio está en la posición ' + posicionEncontrada);
+}

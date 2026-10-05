@@ -1,0 +1,26 @@
+const prompt = require('prompt-sync')();
+
+let opcion;
+
+do {
+  console.log("Bienvenido a nequi");
+  console.log("1) Ver saldo");
+  console.log("2) Enviar dinero");
+  console.log("3) Recargar");
+  console.log("4) Salir");
+
+  opcion = prompt('Elige una opción: ');
+
+  if (opcion === '1') {
+    console.log('Tu saldo es: $122.000');
+  } else if (opcion === '2') {
+    console.log('enviar dinero.');
+  } else if (opcion === '3') {
+    console.log(' recargar.');
+  } else if (opcion === '4') {
+    console.log('gracias por usar la apa');
+  } else {
+    console.log('Opción no válida. Intenta de nuevo.');
+  }
+
+} while (opcion !== '4');
